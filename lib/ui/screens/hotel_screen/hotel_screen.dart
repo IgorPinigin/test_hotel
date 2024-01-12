@@ -4,6 +4,7 @@ import 'package:test_hotel/blocs/hotel_bloc/hotel_bloc.dart';
 import 'package:test_hotel/constants/colors.dart';
 import 'package:test_hotel/constants/texts.dart';
 import 'package:test_hotel/ui/screens/hotel_screen/widgets/bottom_info_container_hotel.dart';
+import 'package:test_hotel/ui/screens/hotel_screen/widgets/button_select_room.dart';
 import 'widgets/top_info_container_hotel.dart';
 
 class HotelScreen extends StatelessWidget {
@@ -30,6 +31,7 @@ class HotelScreen extends StatelessWidget {
             TopInfoContainerHotel(size: size),
             const Padding(padding: EdgeInsets.only(top: 8)),
             BottomInfoContainerHotel(size: size),
+            ButtonSelectRoom(size: size),
           ],
         ),
       ),

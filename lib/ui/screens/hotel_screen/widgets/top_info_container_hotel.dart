@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:test_hotel/constants/colors.dart';
 import 'package:test_hotel/constants/texts.dart';
+import 'package:test_hotel/ui/widgets/price_text.dart';
 
 import 'images_carousel_slider.dart';
 
@@ -17,10 +18,15 @@ class TopInfoContainerHotel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: size.width,
-      height: 429,
       decoration: const BoxDecoration(
-          color: ApplicationColors.whiteColor,
-          borderRadius: BorderRadius.vertical(bottom: Radius.circular(12))),
+        color: ApplicationColors.whiteColor,
+        borderRadius: BorderRadius.vertical(
+          bottom: Radius.circular(12),
+        ),
+      ),
+      constraints: const BoxConstraints(
+        maxHeight: double.infinity,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -43,26 +49,8 @@ class TopInfoContainerHotel extends StatelessWidget {
               style: ApplicationTexts.blueTextStyle,
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                const Text(
-                  "от 134 673 ₽",
-                  style: ApplicationTexts.priceTextStyle,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 8, bottom: 3),
-                  child: Text(
-                    "за тур с перелётом",
-                    style: ApplicationTexts.greyTextStyle
-                        .copyWith(fontWeight: FontWeight.w400),
-                  ),
-                ),
-              ],
-            ),
+          const PriceText(
+            text: "${ApplicationTexts.from} ",
           )
         ],
       ),
