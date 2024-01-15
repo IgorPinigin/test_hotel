@@ -15,7 +15,7 @@ class InfoTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 38,
       width: size.width,
       child: Row(

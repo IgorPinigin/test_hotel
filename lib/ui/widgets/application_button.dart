@@ -16,19 +16,16 @@ class ApplicationButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 16, right: 16, top: 12, bottom: 16),
-      child: ElevatedButton(
-        onPressed: onPressed,
-        style: ElevatedButton.styleFrom(
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-            fixedSize: Size(size.width, 48),
-            backgroundColor: ApplicationColors.applicationButtonColor),
-        child: Text(
-          text,
-          style: ApplicationTexts.buttonTextStyle,
-        ),
+    return ElevatedButton(
+      onPressed: onPressed,
+      style: ElevatedButton.styleFrom(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+          fixedSize: Size(size.width, 48),
+          backgroundColor: ApplicationColors.applicationButtonColor),
+      child: Text(
+        text,
+        style: ApplicationTexts.buttonTextStyle,
       ),
     );
   }

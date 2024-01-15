@@ -6,6 +6,7 @@ class ApplicationColors {
   static const Color backgroundColor = Color.fromRGBO(248, 248, 249, 1);
   static const Color whiteColor = Color.fromRGBO(255, 255, 255, 1);
   static const Color blueTextColor = Color.fromRGBO(13, 114, 255, 1);
+  static const Color blueColor10 = Color.fromRGBO(13, 114, 255, 0.1);
   static const Color greyTextColor = Color.fromRGBO(130, 135, 150, 1);
   static const Color tileGreyTextColor = Color.fromRGBO(44, 48, 53, 1);
   static const Color applicationButtonColor = Color.fromRGBO(13, 114, 255, 1);

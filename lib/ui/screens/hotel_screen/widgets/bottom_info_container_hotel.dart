@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_hotel/constants/colors.dart';
 import 'package:test_hotel/constants/texts.dart';
-import 'package:test_hotel/ui/screens/hotel_screen/widgets/fact_about_hotel_container.dart';
+import '../../../widgets/small_cards_info.dart';
 import 'triple_short_information.dart';
 
 class BottomInfoContainerHotel extends StatelessWidget {
@@ -37,15 +37,8 @@ class BottomInfoContainerHotel extends StatelessWidget {
               style: ApplicationTexts.largeTextStyle,
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 16.0),
-              child: Wrap(
-                spacing: 8,
-                runSpacing: 8,
-                children: [
-                  for (int i = 0; i < facts.length; i++)
-                    FactAboutHotelContainer(text: facts[i]),
-                ],
-              ),
+              padding: const EdgeInsets.only(top: 8),
+              child: SmallCardsInfo(facts: facts),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 12),

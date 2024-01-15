@@ -32,26 +32,31 @@ class TopInfoContainerHotel extends StatelessWidget {
         children: [
           ImagesCarouselSlider(size: size),
           Padding(
-            padding: const EdgeInsets.only(top: 16, left: 16),
-            child: SvgPicture.asset('assets/images/5stars.svg'),
-          ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            child: Text(
-              "Steigenberger Makadi",
-              style: ApplicationTexts.largeTextStyle,
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 16),
+                  child: SvgPicture.asset('assets/images/5stars.svg'),
+                ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8),
+                  child: Text(
+                    "Steigenberger Makadi",
+                    style: ApplicationTexts.largeTextStyle,
+                  ),
+                ),
+                const Text(
+                  "Madinat Makadi, Safaga Road, Makadi Bay, Египет",
+                  style: ApplicationTexts.blueTextStyle,
+                ),
+                const PriceText(
+                  text: "${ApplicationTexts.from} ",
+                )
+              ],
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
-            child: Text(
-              "Madinat Makadi, Safaga Road, Makadi Bay, Египет",
-              style: ApplicationTexts.blueTextStyle,
-            ),
-          ),
-          const PriceText(
-            text: "${ApplicationTexts.from} ",
-          )
         ],
       ),
     );
