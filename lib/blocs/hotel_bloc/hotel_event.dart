@@ -10,4 +10,6 @@ class PageIndexChangeEvent extends HotelEvent {
   PageIndexChangeEvent(this.pageIndex);
 }
 
-class PageIndexLoadedEvent extends HotelEvent {}
+class AddTouristEvent extends HotelEvent {}
+
+class LoadTouristEvent extends HotelEvent {}

@@ -14,8 +14,8 @@ class FactAboutHotelContainer extends StatelessWidget {
         color: ApplicationColors.backgroundColor,
         borderRadius: BorderRadius.all(Radius.circular(5)),
       ),
-      height: 29,
       constraints: const BoxConstraints(
+        maxHeight: double.infinity,
         maxWidth: double.infinity,
       ),
       child: Padding(

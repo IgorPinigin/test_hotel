@@ -76,4 +76,12 @@ class ApplicationTexts {
     fontSize: 16,
     height: 1.2,
   );
+
+  static const TextStyle greyTextFieldStyle = TextStyle(
+    color: ApplicationColors.greyTextFieldColor,
+    fontFamily: sfproDisplay,
+    fontWeight: FontWeight.w400,
+    fontSize: 17,
+    height: 1.2,
+  );
 }

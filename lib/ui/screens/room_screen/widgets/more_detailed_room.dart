@@ -11,8 +11,10 @@ class MoreDetailedRoom extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 8.0),
       child: Container(
-        width: 196,
-        height: 29,
+        constraints: const BoxConstraints(
+          maxHeight: double.infinity,
+          maxWidth: double.infinity,
+        ),
         decoration: const BoxDecoration(
           color: ApplicationColors.blueColor10,
           borderRadius: BorderRadius.all(
@@ -20,11 +22,15 @@ class MoreDetailedRoom extends StatelessWidget {
           ),
         ),
         child: Row(
+          mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Text(
-              "Подбробнее о номере",
-              style: ApplicationTexts.blueTextStyle.copyWith(fontSize: 16),
+            Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: Text(
+                "Подбробнее о номере",
+                style: ApplicationTexts.blueTextStyle.copyWith(fontSize: 16),
+              ),
             ),
             SvgPicture.asset(
               "assets/images/arrow_right_img.svg",

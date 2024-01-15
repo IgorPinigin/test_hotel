@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test_hotel/blocs/hotel_bloc/hotel_bloc.dart';
 
-import 'circle_slider_container.dart';
+import '../screens/hotel_screen/widgets/circle_slider_container.dart';
 
 class BottomSlider extends StatelessWidget {
   const BottomSlider({

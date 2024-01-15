@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:test_hotel/blocs/hotel_bloc/hotel_bloc.dart';
 import 'package:test_hotel/ui/screens/hotel_screen/hotel_screen.dart';
 
+import 'ui/screens/booking_screen/booking_screen.dart';
 import 'ui/screens/room_screen/room_screen.dart';
 
 void main() {
@@ -21,6 +22,14 @@ final GoRouter router = GoRouter(routes: [
     path: "/room/:text",
     builder: (BuildContext context, GoRouterState state) {
       return RoomScreen(
+        text: state.pathParameters["text"].toString(),
+      );
+    },
+  ),
+  GoRoute(
+    path: "/booking/:text",
+    builder: (BuildContext context, GoRouterState state) {
+      return BookingScreen(
         text: state.pathParameters["text"].toString(),
       );
     },
