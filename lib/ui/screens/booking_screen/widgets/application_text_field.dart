@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:test_hotel/constants/colors.dart';
 import 'package:test_hotel/constants/texts.dart';
 
 class ApplicationTextField extends StatelessWidget {
   const ApplicationTextField({
     super.key,
+    required this.labelText,
+    required this.keyboardType,
+    required this.inputFormatters,
   });
-
+  final String labelText;
+  final TextInputType keyboardType;
+  final List<TextInputFormatter> inputFormatters;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -20,21 +26,21 @@ class ApplicationTextField extends StatelessWidget {
             Radius.circular(10),
           ),
         ),
-        child: const Padding(
-          padding: EdgeInsets.only(top: 12.0),
-          child: TextField(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 12.0),
+          child: TextFormField(
             decoration: InputDecoration(
-              constraints: BoxConstraints(maxHeight: double.infinity),
+              constraints: const BoxConstraints(maxHeight: double.infinity),
               filled: true,
               fillColor: ApplicationColors.backgroundColor,
-              labelText: "Имя",
+              labelText: labelText,
               floatingLabelAlignment: FloatingLabelAlignment.start,
               labelStyle: ApplicationTexts.greyTextFieldStyle,
-              contentPadding: EdgeInsets.only(
+              contentPadding: const EdgeInsets.only(
                 left: 16,
                 //top: 10,
               ),
-              border: OutlineInputBorder(
+              border: const OutlineInputBorder(
                 borderSide: BorderSide.none,
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(10),

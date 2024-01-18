@@ -19,20 +19,47 @@ class _ApiService implements ApiService {
   String? baseUrl;
 
   @override
-  Future<List<Hotel>> getHotel() async {
+  Future<Hotel> getHotel() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result =
-        await _dio.fetch<List<dynamic>>(_setStreamType<List<Hotel>>(Options(
+        await _dio.fetch<Map<String, dynamic>>(_setStreamType<Hotel>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
             .compose(
               _dio.options,
-              'https://run.mocky.io/v3/75000507-da9a-43f8-a618-df698ea7176d',
+              'https://run.mocky.io/v3/73436b14-8acd-4690-8009-1963a0e160f9',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = Hotel.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<List<Room>> getRooms() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result =
+        await _dio.fetch<List<dynamic>>(_setStreamType<List<Room>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'https://run.mocky.io/v3/c9398fba-9c33-44a6-b0b1-6060718926c6',
               queryParameters: queryParameters,
               data: _data,
             )
@@ -42,8 +69,35 @@ class _ApiService implements ApiService {
               baseUrl,
             ))));
     var value = _result.data!
-        .map((dynamic i) => Hotel.fromJson(i as Map<String, dynamic>))
+        .map((dynamic i) => Room.fromJson(i as Map<String, dynamic>))
         .toList();
+    return value;
+  }
+
+  @override
+  Future<Booking> getBooking() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final Map<String, dynamic>? _data = null;
+    final _result =
+        await _dio.fetch<Map<String, dynamic>>(_setStreamType<Booking>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              'https://run.mocky.io/v3/ed1a3e50-fd69-422e-8098-604fc49e0b97',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = Booking.fromJson(_result.data!);
     return value;
   }
 

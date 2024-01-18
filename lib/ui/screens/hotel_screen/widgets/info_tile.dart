@@ -5,11 +5,9 @@ import 'package:test_hotel/constants/texts.dart';
 class InfoTile extends StatelessWidget {
   const InfoTile({
     Key? key,
-    required this.size,
     required this.icon,
     required this.text,
   }) : super(key: key);
-  final Size size;
   final String icon;
   final String text;
 
@@ -17,7 +15,7 @@ class InfoTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       constraints: const BoxConstraints(maxHeight: double.infinity),
-      width: size.width,
+      width: double.infinity,
       child: Row(
         children: [
           SvgPicture.asset(icon),

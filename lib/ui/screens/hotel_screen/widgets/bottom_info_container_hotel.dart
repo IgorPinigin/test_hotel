@@ -1,23 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:test_hotel/constants/colors.dart';
 import 'package:test_hotel/constants/texts.dart';
+import 'package:test_hotel/logic/models/hotel.dart';
 import '../../../widgets/small_cards_info.dart';
 import 'triple_short_information.dart';
 
 class BottomInfoContainerHotel extends StatelessWidget {
-  const BottomInfoContainerHotel({super.key, required this.size});
+  const BottomInfoContainerHotel({super.key, required this.hotel});
 
-  final Size size;
+  final Hotel hotel;
+
   @override
   Widget build(BuildContext context) {
-    final List<String> facts = [
-      "3-я линия",
-      "Платный Wi-Fi в фойе",
-      "30 км до аэропорта",
-      "1 км до пляжа"
-    ];
     return Container(
-      width: size.width,
+      width: double.infinity,
       decoration: const BoxDecoration(
         color: ApplicationColors.whiteColor,
         borderRadius: BorderRadius.all(
@@ -36,25 +32,16 @@ class BottomInfoContainerHotel extends StatelessWidget {
               ApplicationTexts.aboutHotel,
               style: ApplicationTexts.largeTextStyle,
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 8),
-              child: SmallCardsInfo(facts: facts),
+            const Padding(padding: EdgeInsets.only(top: 16)),
+            SmallCardsInfo(facts: hotel.aboutTheHotel!.peculiarities!),
+            const Padding(padding: EdgeInsets.only(top: 12)),
+            RichText(
+              text: TextSpan(
+                  text: hotel.aboutTheHotel!.description!,
+                  style: ApplicationTexts.infoAboutHotelStyle),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 12),
-              child: RichText(
-                text: const TextSpan(
-                    text:
-                        'Отель VIP-класса с собственными гольф полями. Высокий уровнь сервиса. Рекомендуем для респектабельного отдыха. Отель принимает гостей от 18 лет!',
-                    style: ApplicationTexts.infoAboutHotelStyle),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 16),
-              child: TripleShortInformation(
-                size: size,
-              ),
-            ),
+            const Padding(padding: EdgeInsets.only(top: 16)),
+            const TripleShortInformation(),
           ],
         ),
       ),

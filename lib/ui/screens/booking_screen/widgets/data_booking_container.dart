@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:test_hotel/constants/colors.dart';
+import 'package:test_hotel/logic/models/booking.dart';
 import 'package:test_hotel/ui/screens/booking_screen/widgets/row_with_data_booking.dart';
 
 class DataBookingContainer extends StatelessWidget {
   const DataBookingContainer({
     super.key,
+    required this.booking,
   });
+
+  final Booking booking;
 
   @override
   Widget build(BuildContext context) {
@@ -18,38 +22,37 @@ class DataBookingContainer extends StatelessWidget {
       ),
       width: double.infinity,
       constraints: const BoxConstraints(maxHeight: double.infinity),
-      child: const Column(
+      child: Column(
         children: [
           RowWithDataBooking(
             constText: "Вылет из",
-            text: "Москва",
+            text: booking.departure!,
           ),
           RowWithDataBooking(
             constText: "Страна, город",
-            text: "Москва",
+            text: booking.arrivalCountry!,
           ),
           RowWithDataBooking(
             constText: "Даты",
-            text: "Москва",
+            text: "${booking.tourDateStart}-${booking.tourDateStop}",
           ),
           RowWithDataBooking(
             constText: "Кол-во ночей",
-            text: "Москва",
+            text: booking.numberOfNights.toString(),
           ),
           RowWithDataBooking(
             constText: "Отель",
-            text: "Москва",
+            text: booking.hotelName!,
           ),
           RowWithDataBooking(
             constText: "Номер",
-            text:
-                "МоскваМоскваМоскваМоскваМоскваМоскваМоскваМоскваМоскваМосква",
+            text: booking.room!,
           ),
           RowWithDataBooking(
             constText: "Питание",
-            text: "Москва",
+            text: booking.nutrition!,
           ),
-          Padding(padding: EdgeInsets.only(top: 16)),
+          const Padding(padding: EdgeInsets.only(top: 16)),
         ],
       ),
     );

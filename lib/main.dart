@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:test_hotel/blocs/hotel_bloc/hotel_bloc.dart';
+import 'package:test_hotel/logic/models/hotel.dart';
 import 'package:test_hotel/ui/screens/hotel_screen/hotel_screen.dart';
 
 import 'ui/screens/booking_screen/booking_screen.dart';
@@ -27,11 +28,9 @@ final GoRouter router = GoRouter(routes: [
     },
   ),
   GoRoute(
-    path: "/booking/:text",
+    path: "/booking",
     builder: (BuildContext context, GoRouterState state) {
-      return BookingScreen(
-        text: state.pathParameters["text"].toString(),
-      );
+      return BookingScreen();
     },
   ),
 ]);

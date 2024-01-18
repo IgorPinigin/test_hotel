@@ -3,11 +3,9 @@ import 'package:flutter/material.dart';
 class ImageRoundedContainer extends StatelessWidget {
   const ImageRoundedContainer({
     Key? key,
-    required this.size,
     required this.image,
   }) : super(key: key);
 
-  final Size size;
   final String image;
 
   @override
@@ -15,7 +13,7 @@ class ImageRoundedContainer extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Container(
-        width: size.width,
+        width: double.infinity,
         height: 257,
         decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(15))),

@@ -6,7 +6,6 @@ abstract class HotelState extends Equatable {}
 
 class HotelInitial extends HotelState {
   @override
-  // TODO: implement props
   List<Object?> get props => [];
 }
 
@@ -16,7 +15,6 @@ class ChangedIndexState extends HotelState {
   ChangedIndexState({required this.curentIndex});
 
   @override
-  // TODO: implement props
   List<Object?> get props => [curentIndex];
 }
 
@@ -27,6 +25,5 @@ class TouristsState extends HotelState {
   });
 
   @override
-  // TODO: implement props
   List<Object?> get props => [tourists];
 }

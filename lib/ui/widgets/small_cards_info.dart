@@ -11,16 +11,13 @@ class SmallCardsInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 8.0),
-      child: Wrap(
-        spacing: 8,
-        runSpacing: 8,
-        children: [
-          for (int i = 0; i < facts.length; i++)
-            FactAboutHotelContainer(text: facts[i]),
-        ],
-      ),
+    return Wrap(
+      spacing: 8,
+      runSpacing: 8,
+      children: [
+        for (int i = 0; i < facts.length; i++)
+          FactAboutHotelContainer(text: facts[i]),
+      ],
     );
   }
 }

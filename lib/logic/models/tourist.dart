@@ -11,7 +11,6 @@ class Tourist extends Equatable {
   }
 
   @override
-  // TODO: implement props
   List<Object?> get props => [id, number, isShow];
 
   Tourist copyWith({

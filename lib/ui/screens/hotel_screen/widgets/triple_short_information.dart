@@ -7,39 +7,34 @@ import 'package:test_hotel/ui/widgets/application_divider.dart';
 class TripleShortInformation extends StatelessWidget {
   const TripleShortInformation({
     Key? key,
-    required this.size,
   }) : super(key: key);
-  final Size size;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: size.width,
+      width: double.infinity,
       decoration: const BoxDecoration(
         color: ApplicationColors.backgroundColor,
         borderRadius: BorderRadius.all(Radius.circular(15)),
       ),
       constraints: const BoxConstraints(maxHeight: double.infinity),
-      child: Padding(
-        padding: const EdgeInsets.all(15),
+      child: const Padding(
+        padding: EdgeInsets.all(15),
         child: Column(
           children: [
             InfoTile(
               text: ApplicationTexts.conveniences,
               icon: "assets/images/happy_img.svg",
-              size: size,
             ),
-            const ApplicationDivider(),
+            ApplicationDivider(),
             InfoTile(
               text: ApplicationTexts.whatIsIncluded,
               icon: "assets/images/tick_square_img.svg",
-              size: size,
             ),
-            const ApplicationDivider(),
+            ApplicationDivider(),
             InfoTile(
               text: ApplicationTexts.whatIsNotIncluded,
               icon: "assets/images/close_square_img.svg",
-              size: size,
             ),
           ],
         ),

@@ -8,37 +8,34 @@ class MoreDetailedRoom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 8.0),
-      child: Container(
-        constraints: const BoxConstraints(
-          maxHeight: double.infinity,
-          maxWidth: double.infinity,
+    return Container(
+      constraints: const BoxConstraints(
+        maxHeight: double.infinity,
+        maxWidth: double.infinity,
+      ),
+      decoration: const BoxDecoration(
+        color: ApplicationColors.blueColor10,
+        borderRadius: BorderRadius.all(
+          Radius.circular(5),
         ),
-        decoration: const BoxDecoration(
-          color: ApplicationColors.blueColor10,
-          borderRadius: BorderRadius.all(
-            Radius.circular(5),
-          ),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 10),
-              child: Text(
-                "Подбробнее о номере",
-                style: ApplicationTexts.blueTextStyle.copyWith(fontSize: 16),
-              ),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 10, top: 5, bottom: 5),
+            child: Text(
+              "Подбробнее о номере",
+              style: ApplicationTexts.blueTextStyle.copyWith(fontSize: 16),
             ),
-            SvgPicture.asset(
-              "assets/images/arrow_right_img.svg",
-              colorFilter: const ColorFilter.mode(
-                  ApplicationColors.blueTextColor, BlendMode.srcIn),
-            )
-          ],
-        ),
+          ),
+          SvgPicture.asset(
+            "assets/images/arrow_right_img.svg",
+            colorFilter: const ColorFilter.mode(
+                ApplicationColors.blueTextColor, BlendMode.srcIn),
+          )
+        ],
       ),
     );
   }

@@ -7,10 +7,7 @@ class ApplicationButton extends StatelessWidget {
     super.key,
     required this.text,
     required this.onPressed,
-    required this.size,
   });
-
-  final Size size;
   final String text;
   final VoidCallback onPressed;
 
@@ -21,7 +18,7 @@ class ApplicationButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-          fixedSize: Size(size.width, 48),
+          fixedSize: Size(MediaQuery.of(context).size.width, 48),
           backgroundColor: ApplicationColors.applicationButtonColor),
       child: Text(
         text,

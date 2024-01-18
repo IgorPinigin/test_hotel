@@ -14,32 +14,29 @@ class BottomSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0),
-      child: Container(
-        width: 75,
-        height: 17,
-        decoration: const BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.all(Radius.circular(5))),
-        child: Padding(
-          padding: const EdgeInsets.all(2.5),
-          child: BlocBuilder<HotelBloc, HotelState>(
-            builder: (context, state) {
-              return Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  for (int i = 0; i < images.length; i++)
-                    if (state is ChangedIndexState)
-                      CircleSliderContainer(
-                        color: state.curentIndex == i
-                            ? Colors.black
-                            : Colors.black38,
-                      ),
-                ],
-              );
-            },
-          ),
+    return Container(
+      width: 75,
+      height: 17,
+      decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.all(Radius.circular(5))),
+      child: Padding(
+        padding: const EdgeInsets.all(2.5),
+        child: BlocBuilder<HotelBloc, HotelState>(
+          builder: (context, state) {
+            return Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                for (int i = 0; i < images.length; i++)
+                  if (state is ChangedIndexState)
+                    CircleSliderContainer(
+                      color: state.curentIndex == i
+                          ? Colors.black
+                          : Colors.black38,
+                    ),
+              ],
+            );
+          },
         ),
       ),
     );
